@@ -31,7 +31,7 @@ sap.ui.define([
             // Create a dialog for filtering by city
             if (!this._oCityFilterDialog) {
                 this._oCityFilterDialog = new sap.m.Dialog({
-                    title: "Filtruj wg miasta...",
+                    title: "Filtruj wg miasta",
                     content: [
                         new sap.m.Input({
                             placeholder: "Wprowadź nazwę...",
