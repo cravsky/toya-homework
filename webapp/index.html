@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie rekrutacyjne TOYA S.A.</title>
+    <script 
+        id="sap-ui-bootstrap" 
+        src="https://ui5.sap.com/1.71.70/resources/sap-ui-core.js" 
+        data-sap-ui-theme="sap_belize"
+        data-sap-ui-libs="sap.m" 
+        data-sap-ui-compatVersion="edge" 
+        data-sap-ui-async="true"
+        data-sap-ui-resourceroots='{
+            "sap.ui.demo.toya": "./"
+        }'>
+    </script>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            new sap.ui.core.ComponentContainer({
+                name: "sap.ui.demo.toya",
+                settings: {
+                    id: "toyaApp"
+                },
+                async: true
+            }).placeAt("content");
+        });
+    </script>
+</head>
+
+<body class="sapUiBody" id="content">
+</body>
+
+</html>
