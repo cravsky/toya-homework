@@ -11,9 +11,9 @@ sap.ui.define([
             if (location.hostname === 'localhost'
                 || location.hostname === ''
                 || location.hostname === '127.0.0.1') {
-                apiUrl = "http://localhost:3000/odata/"
+                sServiceUrl = "http://localhost:3000/odata/"
             } else {
-                sServiceUrl = "https://toya-homework-production.up.railway.app/odata";
+                sServiceUrl = "https://toya-homework-production.up.railway.app/odata/";
             }
 
             var oDataModel = new ODataModel(sServiceUrl, {
