@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "live-server --open=/webapp --port=8080",
-    "server": "node server/index.js --port=3000"
+    "server": "node server/index.js --port=3000",
+    "start": "concurrently \"npm run server\" \"npm run dev\""
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "live-server": "^1.2.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "concurrently": "^9.0.1"
   }
 }
