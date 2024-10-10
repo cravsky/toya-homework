@@ -1,0 +1,10 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.ui.demo.toya.controller.LandingPage">
+    <Page title="Zadanie rekrutacyjne TOYA S.A.">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Title text="Zadanie rekrutacyjne TOYA S.A." level="H1" />
+                <Button text="Klienci" press="onNavigate" />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -16,9 +16,37 @@
                 "sap.m": {}
             }
         },
-        "models": {
-           
-        },
-        "preload": "none"
+        "models": {},
+        "preload": "none",
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "sap.ui.demo.toya.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true
+            },
+            "routes": [
+                {
+                    "name": "LandingPage",
+                    "pattern": "",
+                    "target": "LandingPage"
+                },
+                {
+                    "name": "ClientTable",
+                    "pattern": "ClientTable",
+                    "target": "ClientTable"
+                }
+            ],
+            "targets": {
+                "LandingPage": {
+                    "viewName": "LandingPage"
+                },
+                "ClientTable": {
+                    "viewName": "ClientTable"
+                }
+            }
+        }
     }
 }
