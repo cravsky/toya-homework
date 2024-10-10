@@ -1,10 +1,8 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/odata/v2/ODataModel",
-    "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator",
     "sap/ui/model/Sorter"
-], function (Controller, ODataModel, Filter, FilterOperator, Sorter) {
+], function (Controller, ODataModel, Sorter) {
     "use strict";
     return Controller.extend("sap.ui.demo.toya.controller.ClientTable", {
         onInit: function () {
@@ -24,7 +22,7 @@ sap.ui.define([
             var bDescending = this._bSortDescending;
             this._bSortDescending = !this._bSortDescending;
 
-            var oSorter = new Sorter("CompanyName", bDescending);
+            var oSorter = new Sorter("CompanyName", !bDescending);
             oBinding.sort(oSorter);
         },
         onFilterCityColumn: function () {
