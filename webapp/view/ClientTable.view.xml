@@ -4,7 +4,7 @@
     controllerName="sap.ui.demo.toya.controller.ClientTable">
     <Page title="Klienci">
         <Table id="idCustomersTable" items="{/Customers}">
-             <headerToolbar>
+            <headerToolbar>
                 <Toolbar>
                     <Title text="Lista klientów" />
                     <ToolbarSpacer />
@@ -12,8 +12,14 @@
                 </Toolbar>
             </headerToolbar>
             <columns>
-                <Column>
-                    <Text text="Nazwa firmy" />
+                <!-- Sortable Company Name column -->
+                <Column hAlign="Left">
+                    <header>
+                        <HBox alignItems="Center">
+                            <Label text="Nazwa firmy" />
+                            <Button icon="sap-icon://sort" press="onSortCompanyName" type="Transparent"/>
+                        </HBox>
+                    </header>
                 </Column>
                 <Column>
                     <Text text="Adres" />
