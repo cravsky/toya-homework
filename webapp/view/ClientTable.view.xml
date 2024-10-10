@@ -4,9 +4,11 @@
     controllerName="sap.ui.demo.toya.controller.ClientTable">
     <Page title="Klienci">
         <Table id="idCustomersTable" items="{/Customers}">
-            <headerToolbar>
+             <headerToolbar>
                 <Toolbar>
                     <Title text="Lista klientów" />
+                    <ToolbarSpacer />
+                    <SearchField placeholder="Filtruj według miasta..." liveChange="onFilterCity" width="20%"/>
                 </Toolbar>
             </headerToolbar>
             <columns>
