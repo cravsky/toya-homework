@@ -6,16 +6,8 @@ sap.ui.define([
     "use strict";
     return Controller.extend("sap.ui.demo.toya.controller.ClientTable", {
         onInit: function () {
-            // condition for local and remote API
-            var sServiceUrl = '';
-            if (location.hostname === 'localhost'
-                || location.hostname === ''
-                || location.hostname === '127.0.0.1') {
-                sServiceUrl = "http://localhost:3000/odata/"
-            } else {
-                sServiceUrl = "https://toya-homework-production.up.railway.app/odata/";
-            }
-
+        
+            var sServiceUrl = "http://localhost:3000/odata/";
             var oDataModel = new ODataModel(sServiceUrl, {
                 useBatch: false
             });

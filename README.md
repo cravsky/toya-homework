@@ -6,11 +6,7 @@ This is a solution to the TOYA S.A. recruitment task
 
 ![](./screenshot.PNG)
 
-## Links
-
-- Solution URL: [CODE](https://github.com/cravsky/toya-homework)
-- Live Site URL: [LIVE](https://toya-homework-production.up.railway.app/webapp/)
-## Installation
+## Installation and Running
 
 ### Prerequisites
 - **Node.js**: [Download and install](https://nodejs.org/).
@@ -22,7 +18,7 @@ This is a solution to the TOYA S.A. recruitment task
 
 2. **Navigate to the project directory**:
    ```bash
-   cd your-extracted-folder
+   cd toya-homework-main
    ```
 
 3. **Install dependencies**:
