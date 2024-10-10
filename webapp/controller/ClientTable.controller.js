@@ -4,13 +4,19 @@ sap.ui.define([
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "sap/ui/model/Sorter"
-], function (Controller) {
+], function (Controller, ODataModel) {
     "use strict";
     return Controller.extend("sap.ui.demo.toya.controller.ClientTable", {
         onInit: function () {
-            console.log("ClientTable controller initialized");
+               var sServiceUrl = "http://localhost:3000/odata/";
+
+            var oDataModel = new ODataModel(sServiceUrl, {
+                useBatch: false
+            });
+
+            this.getView().setModel(oDataModel);
         },
 
-     
+
     });
 });

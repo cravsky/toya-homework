@@ -3,5 +3,45 @@
     xmlns="sap.m"
     controllerName="sap.ui.demo.toya.controller.ClientTable">
     <Page title="Klienci">
+        <Table id="idCustomersTable" items="{/Customers}">
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="Lista klientów" />
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="Nazwa firmy" />
+                </Column>
+                <Column>
+                    <Text text="Adres" />
+                </Column>
+                <Column>
+                    <Text text="Miasto" />
+                </Column>
+                <Column>
+                    <Text text="Kod pocztowy" />
+                </Column>
+                <Column>
+                    <Text text="Numer telefonu" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{CompanyName}" />
+                        <!-- Nazwa firmy -->
+                        <Text text="{Address}" />
+                        <!-- Adres -->
+                        <Text text="{City}" />
+                        <!-- Miasto -->
+                        <Text text="{PostalCode}" />
+                        <!-- Kod pocztowy -->
+                        <Text text="{Phone}" />
+                        <!-- Numer telefonu -->
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
     </Page>
 </mvc:View>
