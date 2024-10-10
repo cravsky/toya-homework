@@ -1,6 +1,7 @@
 <mvc:View
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    controllerName="sap.ui.demo.toya.controller.ClientTable">
     <Page title="Klienci">
     </Page>
 </mvc:View>
