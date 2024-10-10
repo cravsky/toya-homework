@@ -27,17 +27,49 @@ sap.ui.define([
             var oSorter = new Sorter("CompanyName", bDescending);
             oBinding.sort(oSorter);
         },
-        onFilterCity: function (oEvent) {
-            var sQuery = oEvent.getParameter("newValue");
-
-            var aFilters = [];
-            if (sQuery && sQuery.length > 0) {
-                aFilters.push(new Filter("City", FilterOperator.Contains, sQuery));
+        onFilterCityColumn: function () {
+            // Create a dialog for filtering by city
+            if (!this._oCityFilterDialog) {
+                this._oCityFilterDialog = new sap.m.Dialog({
+                    title: "Filtruj wg miasta...",
+                    content: [
+                        new sap.m.Input({
+                            placeholder: "Wprowadź nazwę...",
+                            liveChange: function (oEvent) {
+                                this._sCityFilterValue = oEvent.getParameter("value");
+                            }.bind(this)
+                        })
+                    ],
+                    beginButton: new sap.m.Button({
+                        text: "Zastosuj",
+                        press: function () {
+                            this._applyCityFilter();
+                            this._oCityFilterDialog.close();
+                        }.bind(this)
+                    }),
+                    endButton: new sap.m.Button({
+                        text: "Anuluj",
+                        press: function () {
+                            this._oCityFilterDialog.close();
+                        }.bind(this)
+                    })
+                });
             }
+
+            this._oCityFilterDialog.open();
+        },
+
+        _applyCityFilter: function () {
+            var aFilters = [];
+            if (this._sCityFilterValue && this._sCityFilterValue.length > 0) {
+                aFilters.push(new sap.ui.model.Filter("City", sap.ui.model.FilterOperator.Contains, this._sCityFilterValue));
+            }
+
             var oTable = this.getView().byId("idCustomersTable");
             var oBinding = oTable.getBinding("items");
-            oBinding.filter(aFilters); // in case that filter is empty display all records
+            oBinding.filter(aFilters);
         }
+
 
     });
 });

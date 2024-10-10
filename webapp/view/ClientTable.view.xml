@@ -4,13 +4,6 @@
     controllerName="sap.ui.demo.toya.controller.ClientTable">
     <Page title="Klienci">
         <Table id="idCustomersTable" items="{/Customers}">
-            <headerToolbar>
-                <Toolbar>
-                    <Title text="Lista klientów" />
-                    <ToolbarSpacer />
-                    <SearchField placeholder="Filtruj według miasta..." liveChange="onFilterCity" width="20%"/>
-                </Toolbar>
-            </headerToolbar>
             <columns>
                 <!-- Sortable Company Name column -->
                 <Column hAlign="Left">
@@ -25,7 +18,12 @@
                     <Text text="Adres" />
                 </Column>
                 <Column>
-                    <Text text="Miasto" />
+                    <header>
+                        <HBox alignItems="Center">
+                            <Label text="Miasto" />
+                            <Button icon="sap-icon://filter" type="Transparent" press="onFilterCityColumn" />
+                        </HBox>
+                    </header>
                 </Column>
                 <Column>
                     <Text text="Kod pocztowy" />
